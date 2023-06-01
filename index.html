@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fecha de hoy</title>
+    <style>
+      body {
+        text-align: center;
+      }
+
+      body > * {
+        margin-bottom: 100px;
+      }
+
+      .fecha-lbl {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Programación distribuida de servicios de Internet</h1>
+    <h2>4o Semestre Grupo B</h2>
+    <h2>Nombre: Hugo Levick Alvaez Luna</h2>
+    <h2 class="fecha-lbl">La fecha de hoy:</h2>
+    <p id="fecha"></p>
+  </body>
+
+  <script>
+    async function setDate() {
+      const p = document.getElementById("fecha");
+      const fecha = new Date();
+      p.innerHTML += fecha.toLocaleDateString(undefined, {
+        day: "numeric",
+        weekday: "long",
+        month: "long",
+        year: "numeric",
+      });
+    }
+    setDate();
+  </script>
+</html>
